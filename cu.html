@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Login</title>  
+    <script>
+        function fun(){ 
+            var u,p;
+            u=document.getElementById("uid").value;
+            p=document.getElementById("pwd").value;
+            localStorage.setItem("uname",u);
+            localStorage.setItem("pass",p);
+            var cu=localStorage.getItem("uid");
+            var cp=localStorage.getItem("pwd");
+            r1=cu.localeCompare(u);
+            r2=cp.localeCompare(p);
+            if(r1==0){
+                if(r2==0){
+                    window.open("index.html");
+                    return true;
+                }
+                else{
+                    alert("Enter valid password");
+                    return false;
+                }
+            }
+            else{
+                alert("Enter valid username");
+                return false;
+            }
+        }
+        function fun1(){
+            document.getElementById("uid").value="";
+            document.getElementById("pwd").value="";
+        }   
+    </script> 
+</head>
+<body bgcolor="orange">
+<div id="d2">
+<center>
+<h2>Logic Details</h2>
+<table>
+<tbody>
+<tr>
+<td id="i"> USER ID</td>
+<td><input type="text" value="" id="uid"/></td>
+</tr>  
+<tr>
+<td id="i"> PASSWORD</td>
+<td><input type="password" value="" id="pwd"/></td>
+</tr> 
+</tbody>    
+</table>
+    <br>
+<button onclick="fun()" >Login</button>
+    &nbsp;&nbsp;&nbsp;
+<button type="reset" onclick="fun1()" >Reset</button>
+    &nbsp;&nbsp;&nbsp;
+    <br><br>
+<a href="rg.html" id="i2">New Register Here</a>
+   <p id="id1"></p>
+    </center>
+    </div>   
+</body>
+</html>
